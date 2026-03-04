@@ -31,6 +31,7 @@ import {
   setLocation,
 } from "./tools/io.js";
 import { setAppearance, getLogs } from "./tools/ui.js";
+import { tap, swipe, typeText, pressKey } from "./tools/interact.js";
 
 // Registry of all tools
 const tools: Map<string, ToolDefinition> = new Map([
@@ -54,6 +55,11 @@ const tools: Map<string, ToolDefinition> = new Map([
   // UI & Logs
   ["set_appearance", setAppearance],
   ["get_logs", getLogs],
+  // Interaction (requires Accessibility permissions + cliclick)
+  ["tap", tap],
+  ["swipe", swipe],
+  ["type_text", typeText],
+  ["press_key", pressKey],
 ]);
 
 class TarmacServer {

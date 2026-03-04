@@ -32,6 +32,17 @@ import {
 } from "./tools/io.js";
 import { setAppearance, getLogs } from "./tools/ui.js";
 import { tap, swipe, typeText, pressKey } from "./tools/interact.js";
+import { getUIElements, findAndTap, findAndType } from "./tools/accessibility.js";
+import { startRecording, stopRecording } from "./tools/video.js";
+import { getAppContainer, readAppFile, readUserDefaults } from "./tools/container.js";
+import {
+  multiScreenshot,
+  biometric,
+  networkCondition,
+  getCrashLogs,
+  performanceTrace,
+} from "./tools/device.js";
+import { visualDiff, snapshotCompare } from "./tools/diff.js";
 
 // Registry of all tools
 const tools: Map<string, ToolDefinition> = new Map([
@@ -60,6 +71,26 @@ const tools: Map<string, ToolDefinition> = new Map([
   ["swipe", swipe],
   ["type_text", typeText],
   ["press_key", pressKey],
+  // Accessibility-powered interaction
+  ["get_ui_elements", getUIElements],
+  ["find_and_tap", findAndTap],
+  ["find_and_type", findAndType],
+  // Video recording
+  ["start_recording", startRecording],
+  ["stop_recording", stopRecording],
+  // App container & data
+  ["get_app_container", getAppContainer],
+  ["read_app_file", readAppFile],
+  ["read_user_defaults", readUserDefaults],
+  // Multi-device & advanced
+  ["multi_screenshot", multiScreenshot],
+  ["biometric", biometric],
+  ["network_condition", networkCondition],
+  ["get_crash_logs", getCrashLogs],
+  ["performance_trace", performanceTrace],
+  // Visual diffing
+  ["visual_diff", visualDiff],
+  ["snapshot_compare", snapshotCompare],
 ]);
 
 class TarmacServer {

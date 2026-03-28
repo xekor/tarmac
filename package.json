@@ -11,6 +11,28 @@
     "build": "tsc && chmod +x dist/index.js",
     "start": "node dist/index.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmbientHQ/tarmac.git"
+  },
+  "homepage": "https://github.com/AmbientHQ/tarmac#readme",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "ios",
+    "simulator",
+    "xcode",
+    "automation",
+    "testing",
+    "model-context-protocol",
+    "ai",
+    "claude"
+  ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.0"
   },

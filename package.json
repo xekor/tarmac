@@ -18,9 +18,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmbientHQ/tarmac.git"
+    "url": "git+https://github.com/xekor/tarmac.git"
   },
-  "homepage": "https://github.com/AmbientHQ/tarmac#readme",
+  "homepage": "https://github.com/xekor/tarmac#readme",
   "license": "MIT",
   "keywords": [
     "mcp",

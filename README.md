@@ -25,13 +25,13 @@ MCP server for iOS Simulator automation. Build, run, test, and interact with iOS
 ## Installation
 
 ```sh
-npm install -g tarmac
+npm install -g @xekor/tarmac
 ```
 
 Or run directly:
 
 ```sh
-npx tarmac
+npx @xekor/tarmac
 ```
 
 ## Usage with Claude / MCP
@@ -47,7 +47,7 @@ Add Tarmac to your MCP client configuration. The config file location depends on
   "mcpServers": {
     "tarmac": {
       "command": "npx",
-      "args": ["-y", "tarmac"]
+      "args": ["-y", "@xekor/tarmac"]
     }
   }
 }

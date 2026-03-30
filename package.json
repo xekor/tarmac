@@ -1,5 +1,5 @@
 {
-  "name": "tarmac",
+  "name": "@xekor/tarmac",
   "version": "1.0.0",
   "description": "MCP server for iOS Simulator automation — build, run, screenshot, and interact with Xcode simulators",
   "main": "dist/index.js",

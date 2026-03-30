@@ -36,7 +36,11 @@ npx tarmac
 
 ## Usage with Claude / MCP
 
-Add Tarmac to your MCP client configuration:
+Add Tarmac to your MCP client configuration. The config file location depends on your client:
+
+- **Claude Desktop:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Claude Code:** `~/.claude.json` (or use `claude mcp add`)
+- **Cursor:** `.cursor/mcp.json` in your project root
 
 ```json
 {
@@ -53,19 +57,42 @@ Once connected, your AI assistant can use any of the 30+ tools to automate iOS S
 
 ## Available Tools
 
-| Category | Tools |
-|---|---|
-| Simulators | `list_simulators`, `boot_simulator`, `shutdown_simulator`, `erase_simulator` |
-| Build | `build` |
-| Apps | `install_app`, `launch_app`, `terminate_app`, `list_apps` |
-| I/O | `screenshot`, `open_url`, `push_notification`, `set_location` |
-| UI | `set_appearance`, `get_logs` |
-| Interaction | `tap`, `swipe`, `type_text`, `press_key` |
-| Accessibility | `get_ui_elements`, `find_and_tap`, `find_and_type` |
-| Video | `start_recording`, `stop_recording` |
-| App Data | `get_app_container`, `read_app_file`, `read_user_defaults` |
-| Device | `multi_screenshot`, `biometric`, `network_condition`, `get_crash_logs`, `performance_trace` |
-| Visual Diff | `visual_diff`, `snapshot_compare` |
+| Category | Tool | Description |
+|---|---|---|
+| Simulators | `list_simulators` | List available simulators with state and runtime versions |
+| | `boot_simulator` | Boot a simulator by name or UDID |
+| | `shutdown_simulator` | Shut down a running simulator |
+| | `erase_simulator` | Reset a simulator to factory state |
+| | `set_appearance` | Get or set light/dark mode |
+| Build | `build` | Build an Xcode project or workspace for the simulator |
+| Apps | `install_app` | Install a .app bundle onto a booted simulator |
+| | `launch_app` | Launch an app by bundle identifier |
+| | `terminate_app` | Terminate a running app |
+| | `list_apps` | List installed apps with bundle IDs and metadata |
+| I/O | `screenshot` | Capture a screenshot of the simulator screen |
+| | `multi_screenshot` | Screenshot multiple simulators simultaneously |
+| | `open_url` | Open a URL or deep link in the simulator |
+| | `push_notification` | Send a simulated push notification |
+| | `set_location` | Set simulated GPS coordinates |
+| | `biometric` | Simulate Face ID / Touch ID enrollment and matching |
+| | `network_condition` | Simulate different network conditions |
+| Interaction | `tap` | Tap at screen coordinates (percentage or absolute) |
+| | `swipe` | Swipe between two points on screen |
+| | `type_text` | Type text into the focused field |
+| | `press_key` | Press a keyboard key (Return, Escape, arrows, etc.) |
+| Accessibility | `get_ui_elements` | Query the accessibility tree for visible UI elements |
+| | `find_and_tap` | Find an element by label and tap it |
+| | `find_and_type` | Find a text field by label, focus it, and type |
+| Video | `start_recording` | Start recording the simulator screen |
+| | `stop_recording` | Stop recording and save the video file |
+| App Data | `get_app_container` | Get the file system path to an app's container |
+| | `read_app_file` | Read a file from an app's container |
+| | `read_user_defaults` | Read an app's UserDefaults plist |
+| Diagnostics | `get_logs` | Capture device logs with optional predicate filtering |
+| | `get_crash_logs` | Retrieve crash logs for a specific app |
+| | `performance_trace` | Capture a performance trace with xctrace |
+| Visual Diff | `visual_diff` | Compare two screenshots pixel-by-pixel |
+| | `snapshot_compare` | Take before/after screenshots and diff them |
 
 ## Development
 
